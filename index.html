@@ -1,88 +1,853 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. ST Pushpa - Paediatrician in Bangalore</title>
-    <meta name="description" content="Book appointments with Dr. ST Pushpa, a leading paediatrician in Bangalore. Calm, professional care for your child.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="nav.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Dr. ST Pushpa - Leading Paediatrician in Bangalore</title>
+  <meta name="description" content="Book appointments with Dr. ST Pushpa, a leading paediatrician in Bangalore. Expert, compassionate care for your child's health and development."/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/nav.css" />
+  <link rel="stylesheet" href="assets/css/appointment.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #00897b 0%, #00796b 100%);
+      color: white;
+      padding: 6rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .hero-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-stats {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 16px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-intro {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-intro h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      color: #004d40;
+      margin-bottom: 1rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .section-intro p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .swipeable-content-section {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      margin-bottom: 3rem;
+      transition: -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s, transform 0.3s, -webkit-box-shadow 0.3s, -moz-box-shadow 0.3s, box-shadow 0.3s;
+    }
+
+    .swipeable-content-section:hover {
+      -webkit-transform: translateY(-5px);
+      -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      -o-transform: translateY(-5px);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .swipeable-content-section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      color: #00897b;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .swipeable-content-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(135deg, #00897b, #00796b);
+      border-radius: 2px;
+    }
+
+    .swipeable-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .swipeable-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #f8f9fa;
+    }
+
+    .swipe-slide {
+      min-width: 100%;
+      transition: -webkit-transform 0.5s ease;
+      -moz-transition: -moz-transform 0.5s ease;
+      -o-transition: -o-transform 0.5s ease;
+      transition: transform 0.5s ease;
+      display: none;
+    }
+
+    .swipe-slide.active {
+      display: block;
+    }
+
+    .slide-content {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .slide-content img {
+      width: 100%;
+      max-width: 400px;
+      height: 250px;
+      -webkit-object-fit: cover;
+      -moz-object-fit: cover;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .slide-content h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      color: #004d40;
+      margin-bottom: 1rem;
+    }
+
+    .slide-content p {
+      color: #666;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .swipe-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.9);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      z-index: 10;
+    }
+
+    .swipe-arrow:hover {
+      background: white;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .swipe-arrow-left {
+      left: -25px;
+    }
+
+    .swipe-arrow-right {
+      right: -25px;
+    }
+
+    .swipe-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      gap: 0.5rem;
+    }
+
+    .swipe-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #e0e0e0;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .swipe-dot.active {
+      background: #00897b;
+      transform: scale(1.2);
+    }
+
+    .age-groups-section {
+      background: white;
+      padding: 4rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      margin-bottom: 3rem;
+    }
+
+    .age-groups-section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      color: #004d40;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .age-cards-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 2rem;
+      padding: 1rem 0;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .age-card {
+      min-width: 280px;
+      background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .age-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #00897b, #00796b);
+    }
+
+    .age-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .age-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      color: #004d40;
+      margin-bottom: 1rem;
+    }
+
+    .age-card p {
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .age-card .quote {
+      font-style: italic;
+      color: #00897b;
+      font-weight: 500;
+      background: rgba(255,255,255,0.5);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 20px;
+      margin-bottom: 3rem;
+    }
+
+    .cta-section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      color: #004d40;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      color: #00695c;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      background: #00897b;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cta-btn:hover {
+      background: #00695c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,137,123,0.3);
+    }
+
+    .cta-btn.secondary {
+      background: transparent;
+      color: #00897b;
+      border: 2px solid #00897b;
+    }
+
+    .cta-btn.secondary:hover {
+      background: #00897b;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .swipeable-content-section {
+        padding: 2rem 1rem;
+      }
+
+      .swipe-arrow {
+        width: 40px;
+        height: 40px;
+      }
+
+      .swipe-arrow-left {
+        left: -20px;
+      }
+
+      .swipe-arrow-right {
+        right: -20px;
+      }
+
+      .age-cards-container {
+        gap: 1rem;
+      }
+
+      .age-card {
+        min-width: 250px;
+        padding: 1.5rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .age-card {
+        min-width: 220px;
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="appointment-container">
-        <a href="https://wa.me/919940636769" class="appointment-btn" target="_blank" rel="noopener">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            Book Now
-            <span class="phone-number">9940636769</span>
-        </a>
+  <!-- WhatsApp Booking Button -->
+  <div class="appointment-container">
+    <a href="https://wa.me/919940636769" class="appointment-btn" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+      Book Now <span class="phone-number">9940636769</span>
+    </a>
+  </div>
+
+  <!-- Header Section -->
+  <header class="full-header">
+    <div class="header-content">
+      <h1>Dr. ST Pushpa</h1>
+      <p class="qualification">MBBS, MD (Paediatrics)</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-container">
+    <div class="nav-content">
+      <a href="index.html" class="nav-link active">HOME</a>
+      <a href="pages/about.html" class="nav-link">ABOUT DR ST PUSHPA</a>
+      <a href="pages/services.html" class="nav-link">SERVICES</a>
+      <a href="pages/blog.html" class="nav-link">BLOG</a>
+      <a href="pages/contact.html" class="nav-link">CONTACT</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Expert Pediatric Care for Your Child</h1>
+      <p>Comprehensive healthcare services with a focus on your child's growth, development, and well-being. Experience compassionate care from a leading pediatrician in Bangalore.</p>
+      
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Happy Families</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Emergency Care</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Child-Focused</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="section-intro">
+      <h2>Our Pediatric Services</h2>
+      <p>Dr. ST Pushpa provides comprehensive pediatric care with a focus on preventive medicine, early intervention, and family-centered care. Our services are designed to support your child's healthy development from infancy through adolescence.</p>
     </div>
 
-    <header>
-        <div class="header-content">
-            <h1>Dr. ST Pushpa</h1>
-            <p class="qualification">MBBS, MD (Paediatrics)</p>
+    <!-- First Auto-Sliding Section: Vaccination Services -->
+    <div class="swipeable-content-section">
+        <h2>Vaccination Services</h2>
+        <div class="swipeable-container">
+            <button class="swipe-arrow swipe-arrow-left" onclick="changeSlide(-1, 'vaccination')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            
+            <div class="swipeable-content" data-section="vaccination">
+                <div class="swipe-slide active">
+                    <div class="slide-content">
+                        <img src="assets/images/vaccination.jpg" alt="Vaccination Schedule">
+                        <h3>Vaccination Schedule (as per IAP)</h3>
+                        <p>Comprehensive immunization services following the Indian Academy of Pediatrics (IAP) guidelines. We ensure your child receives all recommended vaccines at the right time to provide optimal protection against preventable diseases.</p>
+                    </div>
+                </div>
+                
+                <div class="swipe-slide">
+                    <div class="slide-content">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80" alt="Vaccine Safety">
+                        <h3>Vaccine Safety & Monitoring</h3>
+                        <p>Safe vaccination practices with proper monitoring and follow-up care to ensure optimal protection and minimal side effects for your child's health and well-being.</p>
+                    </div>
+                </div>
+                
+                <div class="swipe-slide">
+                    <div class="slide-content">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&q=80" alt="Vaccination Records">
+                        <h3>Vaccination Records & Tracking</h3>
+                        <p>Detailed vaccination records and tracking system to ensure your child stays up-to-date with all required immunizations and health protection.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="swipe-arrow swipe-arrow-right" onclick="changeSlide(1, 'vaccination')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
         </div>
-        <img src="hands.avif" alt="Mother and Child" class="header-image">
-    </header>
-    
-    <nav class="nav-container">
-        <div class="nav-content">
-            <a href="index.html" class="nav-link">HOME</a>
-            <a href="about.html" class="nav-link">ABOUT DR ST PUSHPA</a>
-            <a href="services.html" class="nav-link">SERVICES</a>
-            <a href="blog.html" class="nav-link">BLOG</a>
-            <a href="contact.html" class="nav-link">CONTACT</a>
+        
+        <div class="swipe-dots" data-section="vaccination">
+            <span class="swipe-dot active" onclick="goToSlide(0, 'vaccination')"></span>
+            <span class="swipe-dot" onclick="goToSlide(1, 'vaccination')"></span>
+            <span class="swipe-dot" onclick="goToSlide(2, 'vaccination')"></span>
         </div>
-    </nav>
+    </div>
 
-    <div class="age-groups">
-        <h2>Healthy Kids, Happy Life</h2>
-        <div class="age-cards">
-            <div class="age-card">
-                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&q=80" alt="Baby 6-12 months">
-                <div class="age-card-content">
-                    <h3>6-12 Months</h3>
-                    <p>"Every giggle is a milestone, every smile a victory in your baby's journey of growth."</p>
+    <!-- Second Auto-Sliding Section: Growth & Development -->
+    <div class="swipeable-content-section">
+        <h2>Growth & Development</h2>
+        <div class="swipeable-container">
+            <button class="swipe-arrow swipe-arrow-left" onclick="changeSlide(-1, 'growth')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            
+            <div class="swipeable-content" data-section="growth">
+                <div class="swipe-slide active">
+                    <div class="slide-content">
+                        <img src="assets/images/crawling.jpg" alt="Growth Monitoring">
+                        <h3>Growth Monitoring</h3>
+                        <p>Regular monitoring of height, weight, and head circumference to ensure your child is growing at a healthy rate and reaching important developmental milestones.</p>
+                    </div>
+                </div>
+                
+                <div class="swipe-slide">
+                    <div class="slide-content">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&q=80" alt="Developmental Milestones">
+                        <h3>Developmental Milestones</h3>
+                        <p>Tracking important developmental milestones to ensure your child is progressing normally in all areas of development including motor, cognitive, and social skills.</p>
+                    </div>
+                </div>
+                
+                <div class="swipe-slide">
+                    <div class="slide-content">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&q=80" alt="Growth Charts">
+                        <h3>Growth Charts & Analysis</h3>
+                        <p>Detailed growth charts and analysis to identify any potential growth issues early and provide appropriate interventions for optimal development.</p>
+                    </div>
                 </div>
             </div>
+            
+            <button class="swipe-arrow swipe-arrow-right" onclick="changeSlide(1, 'growth')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="swipe-dots" data-section="growth">
+            <span class="swipe-dot active" onclick="goToSlide(0, 'growth')"></span>
+            <span class="swipe-dot" onclick="goToSlide(1, 'growth')"></span>
+            <span class="swipe-dot" onclick="goToSlide(2, 'growth')"></span>
+        </div>
+    </div>
 
-            <div class="age-card">
-                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&q=80" alt="Toddler 1-3 years">
-                <div class="age-card-content">
-                    <h3>1-3 Years</h3>
-                    <p>"Toddlers are like little explorers - each day brings new discoveries and adventures."</p>
+    <!-- Third Auto-Sliding Section: Child Care Services -->
+    <div class="swipeable-content-section">
+        <h2>Child Care Services</h2>
+        <div class="swipeable-container">
+            <button class="swipe-arrow swipe-arrow-left" onclick="changeSlide(-1, 'care')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            
+            <div class="swipeable-content" data-section="care">
+                <div class="swipe-slide active">
+                    <div class="slide-content">
+                        <img src="assets/images/food.jpg" alt="Nutrition Guidance">
+                        <h3>Nutrition Guidance</h3>
+                        <p>Expert advice on proper nutrition for different age groups, from breastfeeding support to healthy eating habits for your child's optimal growth and development.</p>
+                    </div>
+                </div>
+                
+                <div class="swipe-slide">
+                    <div class="slide-content">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&q=80" alt="Common Illness">
+                        <h3>Common Illness Treatment</h3>
+                        <p>Treatment and management of common childhood illnesses like fever, cold, cough, and infections with gentle, effective care to help your child recover quickly.</p>
+                    </div>
+                </div>
+                
+                <div class="swipe-slide">
+                    <div class="slide-content">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80" alt="Emergency Care">
+                        <h3>Emergency Care</h3>
+                        <p>24/7 emergency pediatric care for urgent situations. We're here when you need us most, providing immediate medical attention for your child's health emergencies.</p>
+                    </div>
                 </div>
             </div>
+            
+            <button class="swipe-arrow swipe-arrow-right" onclick="changeSlide(1, 'care')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="swipe-dots" data-section="care">
+            <span class="swipe-dot active" onclick="goToSlide(0, 'care')"></span>
+            <span class="swipe-dot" onclick="goToSlide(1, 'care')"></span>
+            <span class="swipe-dot" onclick="goToSlide(2, 'care')"></span>
+        </div>
+    </div>
 
-            <div class="age-card">
-                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&q=80" alt="Preschooler 3-5 years">
-                <div class="age-card-content">
-                    <h3>3-5 Years</h3>
-                    <p>"Preschool years are magical - where imagination meets learning and growth."</p>
+    <!-- Auto-Sliding Gallery Section -->
+    <div class="swipeable-content-section">
+        <h2>Our Clinic Gallery</h2>
+        <div class="swipeable-container">
+            <button class="swipe-arrow swipe-arrow-left" onclick="changeSlide(-1, 'gallery')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            
+            <div class="swipeable-content" data-section="gallery">
+                <div class="swipe-slide active">
+                    <div class="slide-content">
+                        <img src="assets/images/gallery/gallery_1.jpg" alt="Clinic Reception">
+                        <h3>Welcoming Reception Area</h3>
+                        <p>Our child-friendly reception area designed to make families feel comfortable from the moment they arrive. Bright colors and comfortable seating create a warm, welcoming environment.</p>
+                    </div>
+                </div>
+                
+                <div class="swipe-slide">
+                    <div class="slide-content">
+                        <img src="assets/images/gallery/gallery_2.jpg" alt="Consultation Room">
+                        <h3>Modern Consultation Room</h3>
+                        <p>Private consultation rooms equipped with modern medical equipment for thorough examinations. Our rooms are designed to be both professional and child-friendly.</p>
+                    </div>
+                </div>
+                
+                <div class="swipe-slide">
+                    <div class="slide-content">
+                        <img src="assets/images/gallery/gallery_3.jpg" alt="Medical Equipment">
+                        <h3>State-of-the-Art Equipment</h3>
+                        <p>Advanced medical equipment and diagnostic tools to ensure accurate assessments and provide the best possible care for your child's health needs.</p>
+                    </div>
+                </div>
+                
+                <div class="swipe-slide">
+                    <div class="slide-content">
+                        <img src="assets/images/gallery_4.jpg" alt="Patient Care">
+                        <h3>Compassionate Patient Care</h3>
+                        <p>Our approach focuses on making medical examinations comfortable and stress-free for children while providing comprehensive healthcare services.</p>
+                    </div>
                 </div>
             </div>
+            
+            <button class="swipe-arrow swipe-arrow-right" onclick="changeSlide(1, 'gallery')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="swipe-dots" data-section="gallery">
+            <span class="swipe-dot active" onclick="goToSlide(0, 'gallery')"></span>
+            <span class="swipe-dot" onclick="goToSlide(1, 'gallery')"></span>
+            <span class="swipe-dot" onclick="goToSlide(2, 'gallery')"></span>
+            <span class="swipe-dot" onclick="goToSlide(3, 'gallery')"></span>
+        </div>
+    </div>
 
+    <!-- Age Groups Section -->
+    <div class="age-groups-section">
+        <h2>Age-Specific Care</h2>
+        <div class="age-cards-container">
             <div class="age-card">
-                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&q=80" alt="Child 5-7 years">
-                <div class="age-card-content">
-                    <h3>5-7 Years</h3>
-                    <p>"Early school years: where curiosity meets knowledge and friendships bloom."</p>
-                </div>
+                <h3>Newborns (0-2 months)</h3>
+                <p>Specialized care for the earliest stages of life, focusing on feeding, sleep patterns, and early development milestones.</p>
+                <div class="quote">"The first few months are crucial for establishing healthy patterns."</div>
             </div>
-
+            
             <div class="age-card">
-                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&q=80" alt="Child 7-10 years">
-                <div class="age-card-content">
-                    <h3>7-10 Years</h3>
-                    <p>"Growing minds and bodies: where potential meets possibility."</p>
-                </div>
+                <h3>Infants (2-12 months)</h3>
+                <p>Comprehensive care during rapid growth and development, including vaccinations, nutrition, and milestone tracking.</p>
+                <div class="quote">"Every month brings new discoveries and developments."</div>
+            </div>
+            
+            <div class="age-card">
+                <h3>Toddlers (1-3 years)</h3>
+                <p>Supporting independence and learning while ensuring proper nutrition, safety, and developmental progress.</p>
+                <div class="quote">"Toddlers are learning to explore their world safely."</div>
+            </div>
+            
+            <div class="age-card">
+                <h3>Preschoolers (3-5 years)</h3>
+                <p>Preparing for school readiness with focus on social skills, learning abilities, and continued health monitoring.</p>
+                <div class="quote">"Building the foundation for lifelong learning and health."</div>
+            </div>
+            
+            <div class="age-card">
+                <h3>School Age (5-12 years)</h3>
+                <p>Supporting academic success and healthy habits while monitoring growth and addressing any health concerns.</p>
+                <div class="quote">"Balancing school life with healthy development."</div>
+            </div>
+            
+            <div class="age-card">
+                <h3>Adolescents (12-18 years)</h3>
+                <p>Guiding through puberty and teenage years with comprehensive health care and emotional support.</p>
+                <div class="quote">"Supporting the transition to adulthood with care and understanding."</div>
             </div>
         </div>
     </div>
 
-    <footer>
-        &copy; 2024 Dr. ST Pushpa | Paediatrician, Bangalore
-    </footer>
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2>Ready to Schedule Your Child's Visit?</h2>
+        <p>Book an appointment with Dr. ST Pushpa for expert pediatric care and guidance. We're here to support your child's health journey every step of the way.</p>
+        
+        <div class="cta-buttons">
+            <a href="https://wa.me/919940636769" class="cta-btn" target="_blank" rel="noopener">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="20" height="20">
+                Book Appointment on WhatsApp
+            </a>
+            <a href="pages/contact.html" class="cta-btn secondary">
+                📞 Contact Information
+            </a>
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Dr. ST Pushpa</h3>
+        <p>MBBS, MD (Paediatrics)</p>
+        <p>Expert pediatric care for your child's health and development</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p>📞 9940636769</p>
+        <p>📧 drstpushpa@example.com</p>
+        <p>📍 Bengaluru, Karnataka</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/services.html">Services</a>
+        <a href="pages/blog.html">Blog</a>
+        <a href="pages/contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Dr. ST Pushpa Pediatric Clinic. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/swipeable-content.js"></script>
 </body>
 </html>

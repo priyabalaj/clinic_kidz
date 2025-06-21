@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dr. ST Pushpa - Leading Paediatrician in Bangalore</title>
+    <meta name="description" content="Learn more about Dr. ST Pushpa, a leading paediatrician in Bangalore with over 12 years of experience in child healthcare.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/appointment.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .about-hero {
+            background: linear-gradient(135deg, #00897b 0%, #00796b 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .doctor-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+
+        .profile-info {
+            text-align: left;
+        }
+
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info .qualification {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .section-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .section-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: #00897b;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-card h3::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(135deg, #00897b, #00796b);
+            border-radius: 2px;
+        }
+
+        .section-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section-card li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .section-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00897b;
+            font-weight: bold;
+        }
+
+        .section-card li:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-section {
+            background: white;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #00897b, #00796b);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 12px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -24px;
+            border-left-color: white;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -24px;
+            border-right-color: white;
+            transform: translateY(-50%);
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: #00897b;
+            border: 4px solid white;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #00897b;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #004d40;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #00695c;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: #00897b;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            background: #00695c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,137,123,0.3);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            color: #00897b;
+            border: 2px solid #00897b;
+        }
+
+        .cta-btn.secondary:hover {
+            background: #00897b;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .doctor-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+
+            .timeline-content::before {
+                left: -24px !important;
+                border-right-color: white !important;
+                border-left-color: transparent !important;
+            }
+
+            .timeline-dot {
+                left: 20px;
+                transform: none;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Booking Button -->
+    <div class="appointment-container">
+        <a href="https://wa.me/919940636769" class="appointment-btn" target="_blank" rel="noopener">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+            Book Now <span class="phone-number">9940636769</span>
+        </a>
+    </div>
+
+    <!-- Header Section -->
+    <header class="full-header">
+        <div class="header-content">
+            <h1>Dr. ST Pushpa</h1>
+            <p class="qualification">MBBS, MD (Paediatrics)</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-link">HOME</a>
+            <a href="about.html" class="nav-link active">ABOUT DR ST PUSHPA</a>
+            <a href="services.html" class="nav-link">SERVICES</a>
+            <a href="blog.html" class="nav-link">BLOG</a>
+            <a href="contact.html" class="nav-link">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>Meet Dr. ST Pushpa</h1>
+            <p>Leading Paediatrician in Bangalore with over 12 years of dedicated experience in child healthcare</p>
+            
+            <div class="doctor-profile">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Dr. ST Pushpa" class="profile-image">
+                <div class="profile-info">
+                    <h2>Dr. ST Pushpa</h2>
+                    <p class="qualification">MBBS, MD (Paediatrics)</p>
+                    <p>Specialist in Neonatal & Developmental Pediatrics</p>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Children Treated</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Emergency Care</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Patient Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <main class="about-content">
+        <div class="section-grid">
+            <div class="section-card">
+                <h3>Education & Qualifications</h3>
+                <ul>
+                    <li>MBBS - Bangalore Medical College</li>
+                    <li>MD (Paediatrics) - St. John's Medical College</li>
+                    <li>Fellowship in Neonatology</li>
+                    <li>Advanced Life Support Certification</li>
+                    <li>Pediatric Advanced Life Support (PALS)</li>
+                    <li>Neonatal Resuscitation Program (NRP)</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>Areas of Expertise</h3>
+                <ul>
+                    <li>Newborn and Infant Care</li>
+                    <li>Childhood Development and Growth</li>
+                    <li>Vaccination and Immunization</li>
+                    <li>Nutrition and Diet Planning</li>
+                    <li>Common Childhood Illnesses</li>
+                    <li>Developmental Disorders</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-grid">
+            <div class="section-card">
+                <h3>Professional Experience</h3>
+                <ul>
+                    <li>Senior Paediatrician at Rainbow Children's Hospital</li>
+                    <li>Consultant at Apollo Children's Hospital</li>
+                    <li>Specialist in Neonatal Intensive Care</li>
+                    <li>Expert in Developmental Pediatrics</li>
+                    <li>Member of Indian Academy of Pediatrics</li>
+                    <li>Regular Speaker at Medical Conferences</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>Philosophy of Care</h3>
+                <ul>
+                    <li>Holistic approach to child healthcare</li>
+                    <li>Evidence-based medicine with compassion</li>
+                    <li>Preventive healthcare and wellness</li>
+                    <li>Early detection and intervention</li>
+                    <li>Family-centered care approach</li>
+                    <li>Continuous education for parents</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="timeline-container">
+            <h2 style="text-align: center; font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: #004d40; margin-bottom: 3rem;">Professional Journey</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2012-2015</div>
+                        <div class="timeline-title">Medical Education</div>
+                        <p>Completed MBBS from Bangalore Medical College with distinction</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015-2018</div>
+                        <div class="timeline-title">Specialization</div>
+                        <p>Pursued MD in Paediatrics from St. John's Medical College</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018-2020</div>
+                        <div class="timeline-title">Early Career</div>
+                        <p>Started as Junior Consultant at Apollo Children's Hospital</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020-2023</div>
+                        <div class="timeline-title">Senior Position</div>
+                        <p>Promoted to Senior Paediatrician at Rainbow Children's Hospital</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023-Present</div>
+                        <div class="timeline-title">Independent Practice</div>
+                        <p>Established independent practice with focus on comprehensive child care</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Ready to Give Your Child the Best Care?</h2>
+            <p>Book an appointment with Dr. ST Pushpa for expert pediatric care and guidance</p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/919940636769" class="cta-btn" target="_blank" rel="noopener">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="20" height="20">
+                    Book Appointment on WhatsApp
+                </a>
+                <a href="contact.html" class="cta-btn secondary">
+                    📞 Contact Information
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dr. ST Pushpa</h3>
+                <p>MBBS, MD (Paediatrics)</p>
+                <p>Expert pediatric care for your child's health and development</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 9940636769</p>
+                <p>📧 drstpushpa@example.com</p>
+                <p>📍 Bengaluru, Karnataka</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Dr. ST Pushpa Pediatric Clinic. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

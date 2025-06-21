@@ -1,0 +1,132 @@
+/* Header Styles */
+.full-header {
+    background: linear-gradient(135deg, #00897b 0%, #00796b 100%);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease-in-out infinite;
+    color: var(--ocean-white);
+    padding: 1.2rem 2rem;
+    text-align: left;
+    box-shadow: 0 8px 32px rgba(0, 109, 119, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 4px solid var(--ocean-light);
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.full-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.full-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--ocean-accent) 50%, transparent 100%);
+    opacity: 0.6;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 25%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 75%; }
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.header-content h1:hover {
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.header-content p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #e0f2f1;
+    opacity: 0.95;
+    line-height: 1.4;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.header-content p:hover {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .full-header {
+        padding: 1rem 1.5rem;
+        height: 90px;
+    }
+    
+    .header-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .header-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .full-header {
+        padding: 0.8rem 1rem;
+        height: 80px;
+    }
+    
+    .header-content h1 {
+        font-size: 1.4rem;
+    }
+    
+    .header-content p {
+        font-size: 0.9rem;
+    }
+} 

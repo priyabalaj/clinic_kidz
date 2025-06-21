@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* Modern Ocean Sea/Teal Color Scheme */
+:root {
+    /* Primary Colors */
+    --ocean-primary: #006d77;
+    --ocean-secondary: #83c5be;
+    --ocean-accent: #edf6f9;
+    --ocean-dark: #004e57;
+    --ocean-light: #e29578;
+    
+    /* Light Ocean Green */
+    --ocean-green-light: #f0f8f6;
+    --ocean-green-lighter: #f7fcfb;
+    
+    /* Neutral Colors */
+    --ocean-white: #ffffff;
+    --ocean-gray-50: #f8fafc;
+    --ocean-gray-100: #f1f5f9;
+    --ocean-gray-200: #e2e8f0;
+    --ocean-gray-300: #cbd5e1;
+    --ocean-gray-400: #94a3b8;
+    --ocean-gray-500: #64748b;
+    --ocean-gray-600: #475569;
+    --ocean-gray-700: #334155;
+    --ocean-gray-800: #1e293b;
+    --ocean-gray-900: #0f172a;
+    
+    /* Gradients */
+    --ocean-gradient-primary: linear-gradient(135deg, #006d77 0%, #83c5be 100%);
+    --ocean-gradient-secondary: linear-gradient(135deg, #edf6f9 0%, #e29578 100%);
+    --ocean-gradient-light: linear-gradient(135deg, #f0f8f6 0%, #e6f3f0 100%);
+    
+    /* Shadows */
+    --ocean-shadow-sm: 0 1px 2px rgba(0, 109, 119, 0.05);
+    --ocean-shadow-md: 0 4px 6px rgba(0, 109, 119, 0.1);
+    --ocean-shadow-lg: 0 10px 15px rgba(0, 109, 119, 0.1);
+    --ocean-shadow-xl: 0 20px 25px rgba(0, 109, 119, 0.15);
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--ocean-gray-700);
+    background: var(--ocean-green-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .header-content h1 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--ocean-primary);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h2 {
+    color: var(--ocean-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    color: var(--ocean-gray-600);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-position: inside;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: var(--ocean-gray-600);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+/* Profile image */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    display: block;
+    object-fit: cover;
+    border: 4px solid var(--ocean-primary);
+    box-shadow: var(--ocean-shadow-lg);
+}
+
+/* Print styles */
+@media print {
+    .appointment-container {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .age-card {
+        break-inside: avoid;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-img {
+        border-width: 2px;
+    }
+} 

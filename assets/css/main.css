@@ -1,0 +1,217 @@
+/* Blog Section Styles */
+.blog-section {
+    padding: 2rem 0;
+    background: var(--ocean-gray-50);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.blog-section h2 {
+    text-align: center;
+    color: var(--ocean-primary);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.blog-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-card {
+    background: var(--ocean-white);
+    border-radius: 8px;
+    box-shadow: var(--ocean-shadow-md);
+    overflow: hidden;
+    transition: -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s, transform 0.3s, -webkit-box-shadow 0.3s, -moz-box-shadow 0.3s, box-shadow 0.3s;
+    -webkit-flex: 1 1 350px;
+    -ms-flex: 1 1 350px;
+    flex: 1 1 350px;
+    min-width: 300px;
+}
+
+.blog-card:hover {
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: var(--ocean-shadow-lg);
+}
+
+.blog-image {
+    height: 200px;
+    background: var(--ocean-gradient-secondary);
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-object-fit: cover;
+    -moz-object-fit: cover;
+}
+
+.blog-content {
+    padding: 0.8rem;
+}
+
+.blog-content h3 {
+    color: var(--ocean-primary);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.blog-meta {
+    color: var(--ocean-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.blog-excerpt {
+    color: var(--ocean-gray-600);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.read-more-btn {
+    color: var(--ocean-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.read-more-btn:hover {
+    color: var(--ocean-dark);
+}
+
+.blog-cta {
+    text-align: center;
+}
+
+.view-all-blogs-btn {
+    background: var(--ocean-gradient-primary);
+    color: var(--ocean-white);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 500;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: var(--ocean-shadow-sm);
+}
+
+.view-all-blogs-btn:hover {
+    background: var(--ocean-gradient-secondary);
+    box-shadow: var(--ocean-shadow-md);
+    transform: translateY(-2px);
+}
+
+/* Cross-browser compatibility */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 2rem 0;
+    }
+    
+    .blog-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .blog-grid {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .blog-card {
+        -webkit-flex: 1 1 100%;
+        -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+    
+    .blog-content {
+        padding: 1rem;
+    }
+    
+    .view-all-blogs-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-section {
+        padding: 1.5rem 0;
+    }
+    
+    .blog-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .blog-grid {
+        gap: 1rem;
+    }
+    
+    .blog-content {
+        padding: 0.8rem;
+    }
+    
+    .blog-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .view-all-blogs-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-appearance: none) {
+    .blog-card {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    .read-more-btn {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+}
+
+/* Chrome-specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .blog-card {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+} 

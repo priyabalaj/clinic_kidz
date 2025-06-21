@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pediatric Services - Dr. ST Pushpa's Clinic</title>
+    <meta name="description" content="Comprehensive paediatric services offered by Dr. ST Pushpa in Bangalore, including routine check-ups, vaccinations, and specialized care.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/appointment.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .services-hero {
+            background: linear-gradient(135deg, #00897b 0%, #00796b 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .services-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .services-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .services-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .services-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .services-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .services-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .services-intro h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #004d40;
+            margin-bottom: 1rem;
+        }
+
+        .services-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #00897b, #00796b);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: #004d40;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            color: #555;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00897b;
+            font-weight: bold;
+        }
+
+        .service-price {
+            background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+            color: #004d40;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .features-section {
+            background: white;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00897b, #00796b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            color: #004d40;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #004d40;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #00695c;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: #00897b;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            background: #00695c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,137,123,0.3);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            color: #00897b;
+            border: 2px solid #00897b;
+        }
+
+        .cta-btn.secondary:hover {
+            background: #00897b;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="appointment-container">
+        <a href="https://wa.me/919940636769" class="appointment-btn" target="_blank" rel="noopener">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            Book Now
+            <span class="phone-number">9940636769</span>
+        </a>
+    </div>
+
+    <header class="full-header">
+        <div class="header-content">
+            <h1>Dr. ST Pushpa</h1>
+            <p class="qualification">MBBS, MD (Paediatrics)</p>
+        </div>
+    </header>
+    
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-link">HOME</a>
+            <a href="about.html" class="nav-link">ABOUT DR ST PUSHPA</a>
+            <a href="services.html" class="nav-link active">SERVICES</a>
+            <a href="blog.html" class="nav-link">BLOG</a>
+            <a href="contact.html" class="nav-link">CONTACT</a>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <div class="services-hero-content">
+            <h1>Comprehensive Pediatric Services</h1>
+            <p>Expert care for your child's health and development from birth through adolescence</p>
+            
+            <div class="services-stats">
+                <div class="stat-card">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Service Categories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Emergency Care</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Child-Focused Care</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="services-content">
+        <div class="services-intro">
+            <h2>Our Pediatric Services</h2>
+            <p>Dr. ST Pushpa provides comprehensive pediatric care with a focus on preventive medicine, early intervention, and family-centered care. Our services are designed to support your child's healthy development from infancy through adolescence.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">👶</div>
+                <h3>Newborn & Infant Care</h3>
+                <p>Specialized care for newborns and infants, including routine check-ups, feeding guidance, and developmental monitoring.</p>
+                <ul class="service-features">
+                    <li>Newborn health assessment</li>
+                    <li>Breastfeeding support</li>
+                    <li>Growth & development tracking</li>
+                    <li>Vaccination schedule</li>
+                    <li>Sleep pattern guidance</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💉</div>
+                <h3>Vaccination Services</h3>
+                <p>Complete immunization services following IAP guidelines to protect your child from preventable diseases.</p>
+                <ul class="service-features">
+                    <li>Routine immunization schedule</li>
+                    <li>Travel vaccines</li>
+                    <li>Flu shots</li>
+                    <li>Vaccination records maintenance</li>
+                    <li>Post-vaccination monitoring</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Growth & Development</h3>
+                <p>Comprehensive monitoring of your child's physical and cognitive development with early intervention when needed.</p>
+                <ul class="service-features">
+                    <li>Growth chart monitoring</li>
+                    <li>Developmental milestones</li>
+                    <li>Nutritional assessment</li>
+                    <li>Behavioral screening</li>
+                    <li>Learning disability evaluation</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🍎</div>
+                <h3>Nutrition & Diet Planning</h3>
+                <p>Expert nutritional guidance to ensure your child receives optimal nutrition for healthy growth and development.</p>
+                <ul class="service-features">
+                    <li>Nutritional assessment</li>
+                    <li>Personalized diet plans</li>
+                    <li>Weight management</li>
+                    <li>Food allergy testing</li>
+                    <li>Parent nutrition education</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚨</div>
+                <h3>Emergency Care</h3>
+                <p>24/7 emergency pediatric care for acute illnesses, injuries, and urgent medical situations.</p>
+                <ul class="service-features">
+                    <li>Acute illness management</li>
+                    <li>Injury care & treatment</li>
+                    <li>Fever management</li>
+                    <li>Emergency consultations</li>
+                    <li>Hospital coordination</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">👨‍👩‍👧‍👦</div>
+                <h3>Parent Education & Support</h3>
+                <p>Comprehensive education and support for parents to help them make informed decisions about their child's health.</p>
+                <ul class="service-features">
+                    <li>Parenting workshops</li>
+                    <li>Development guidance</li>
+                    <li>Safety education</li>
+                    <li>Behavioral counseling</li>
+                    <li>Family support services</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <section class="features-section">
+        <div class="features-container">
+            <h2 style="text-align: center; font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: #004d40; margin-bottom: 3rem;">Why Choose Our Services?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Expert Care</h3>
+                    <p>12+ years of specialized pediatric experience with continuous medical education and training.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <h3>Personalized Approach</h3>
+                    <p>Individualized care plans tailored to each child's unique needs and family circumstances.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Modern Diagnostics</h3>
+                    <p>State-of-the-art diagnostic tools and evidence-based treatment protocols.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💝</div>
+                    <h3>Child-Friendly Environment</h3>
+                    <p>Warm, welcoming clinic designed to make children feel comfortable and at ease.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Easy Communication</h3>
+                    <p>Multiple communication channels including WhatsApp for quick consultations and follow-ups.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Convenient Location</h3>
+                    <p>Centrally located in Bangalore with easy accessibility and parking facilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Ready to Schedule Your Child's Visit?</h2>
+            <p>Book an appointment with Dr. ST Pushpa for expert pediatric care and guidance</p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/919940636769" class="cta-btn" target="_blank" rel="noopener">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="20" height="20">
+                    Book Appointment on WhatsApp
+                </a>
+                <a href="contact.html" class="cta-btn secondary">
+                    📞 Contact Information
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dr. ST Pushpa</h3>
+                <p>MBBS, MD (Paediatrics)</p>
+                <p>Expert pediatric care for your child's health and development</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 9940636769</p>
+                <p>📧 drstpushpa@example.com</p>
+                <p>📍 Bengaluru, Karnataka</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Dr. ST Pushpa Pediatric Clinic. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,140 @@
+/* Age groups section */
+.age-groups {
+    background-color: var(--ocean-green-lighter);
+    padding: 1.5rem 0.5rem;
+    margin-top: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--ocean-shadow-md);
+}
+
+.age-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.age-card {
+    background: var(--ocean-green-lighter);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--ocean-shadow-md);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--ocean-gray-200);
+}
+
+.age-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ocean-shadow-lg);
+}
+
+.age-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.age-card-content {
+    padding: 0.8rem;
+}
+
+.age-card h3 {
+    color: var(--ocean-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.age-card p {
+    color: var(--ocean-gray-600);
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.service-card {
+    background: var(--ocean-green-lighter);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--ocean-shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ocean-shadow-lg);
+}
+
+.service-card h3 {
+    color: var(--ocean-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--ocean-gray-200);
+    color: var(--ocean-gray-600);
+}
+
+/* About Content */
+.about-content {
+    background: var(--ocean-green-lighter);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--ocean-shadow-md);
+}
+
+.about-content h3 {
+    color: var(--ocean-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--ocean-gray-600);
+}
+
+.about-content ul {
+    margin: 1rem 0;
+}
+
+.about-content li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    color: var(--ocean-gray-600);
+}
+
+/* Mobile Responsive for Components */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card {
+        margin-bottom: 2rem;
+    }
+    
+    .age-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .age-card {
+        margin-bottom: 2rem;
+    }
+} 

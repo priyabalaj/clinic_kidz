@@ -1,0 +1,167 @@
+/* Appointment button styles */
+.appointment-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.appointment-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
+    background: var(--ocean-gradient-primary);
+    color: var(--ocean-white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: var(--ocean-shadow-md);
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+}
+
+.appointment-btn:hover {
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+    transform: translateY(-2px);
+    box-shadow: var(--ocean-shadow-lg);
+    background: var(--ocean-gradient-secondary);
+}
+
+.appointment-btn:active {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.appointment-btn img {
+    width: 24px;
+    height: 24px;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.phone-number {
+    margin-left: 8px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Mobile Responsive for Appointment Button */
+@media screen and (max-width: 768px) {
+    .appointment-container {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .appointment-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        border-radius: 20px;
+    }
+    
+    .appointment-btn img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .phone-number {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .appointment-container {
+        position: static;
+        margin: 1rem auto;
+        text-align: center;
+        top: auto;
+        right: auto;
+    }
+    
+    .appointment-btn {
+        display: inline-flex;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 25px;
+    }
+    
+    .appointment-btn img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .phone-number {
+        display: inline;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .appointment-btn:hover {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+    }
+    
+    .appointment-btn:active {
+        -webkit-transform: scale(0.98);
+        -moz-transform: scale(0.98);
+        -ms-transform: scale(0.98);
+        -o-transform: scale(0.98);
+        transform: scale(0.98);
+    }
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-appearance: none) {
+    .appointment-btn {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
+
+/* Chrome-specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .appointment-container {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    
+    .appointment-btn {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .appointment-btn img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+} 
